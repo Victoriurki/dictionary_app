@@ -22,7 +22,6 @@ class AppThemeData {
         fontSize: 64,
         color: AppColorTheme.textColor,
         fontFamily: AppFontTheme.textFont,
-        //decoration: TextDecoration.none,
       ),
       titleMedium: TextStyle(
         fontSize: 36,
