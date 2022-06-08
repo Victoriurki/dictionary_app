@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 import '../../constants/api_response.dart';
@@ -12,7 +14,14 @@ class DioRemoteClient implements RemoteClient {
   @override
   Future<ApiResponse<List, RemoteClientError>> get(String url) async {
     try {
-      final response = await _dio.get(url);
+      final response = await _dio.get(
+        url,
+        options: Options(
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+        ),
+      );
 
       if (response.statusCode != 200) {
         return ApiResponse(

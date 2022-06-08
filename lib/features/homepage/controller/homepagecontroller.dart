@@ -19,18 +19,34 @@ abstract class _HomePageControllerBase with Store {
 
   @computed
   String get wordType {
-    return wordsFetched.isNotEmpty
-        ? wordsFetched[0].meanings[0].partOfSpeech
+    return wordSearch.isNotEmpty
+        ? wordsFetched.isNotEmpty
+            ? wordsFetched[0].meanings[0].partOfSpeech
+            : ''
         : '';
   }
 
   @computed
   String get phonetic {
-    return wordsFetched.isNotEmpty
-        ? wordsFetched[0].phonetic != null
-            ? wordsFetched[0].phonetic!
-            : ''
-        : '';
+    if (wordSearch.isNotEmpty) {
+      if (wordsFetched.isNotEmpty) {
+        if (wordsFetched[0].phonetic != null) {
+          final word = wordsFetched[0].phonetic!.toString().split('');
+          String newWord = '';
+
+          for (int i = 1; i < word.length - 1; i++) {
+            newWord += word[i];
+          }
+          return newWord;
+        } else {
+          return '';
+        }
+      } else {
+        return '';
+      }
+    } else {
+      return '';
+    }
   }
 
   @action
