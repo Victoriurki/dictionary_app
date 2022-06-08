@@ -9,7 +9,7 @@ class DescriptionPageModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: ((context, args) => const DescriptionPageView()),
+          child: ((context, args) =>  DescriptionPageView(word: args.data)),
         ),
       ];
 }
