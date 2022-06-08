@@ -7,26 +7,17 @@ class LandingPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3), () {
-      Modular.to.navigate('/splashscreen/');
-    });
-
     return Scaffold(
-      backgroundColor: AppColorTheme.landingPageBackgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 250,
-          ),
-          Row(
+        backgroundColor: AppColorTheme.landingPageBackgroundColor,
+        body: InkWell(
+          onTap: () {
+            Modular.to.navigate('/splashscreen/');
+          },
+          child: Stack(
             children: <Widget>[
-              const SizedBox(
-                width: 50,
-              ),
-              SizedBox(
-                width: 360,
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.3,
+                right: MediaQuery.of(context).size.width - 715,
                 child: Text(
                   'Dictionary',
                   style: AppThemeData().titleTheme.textTheme.titleLarge,
@@ -35,45 +26,34 @@ class LandingPageView extends StatelessWidget {
                   softWrap: false,
                 ),
               ),
-            ],
-          ),
-          Row(
-            textDirection: TextDirection.rtl,
-            children: [
-              Text(
-                'Dictionary  ',
-                style: AppThemeData().titleTheme.textTheme.titleLarge,
-                overflow: TextOverflow.clip,
-                maxLines: 1,
-                softWrap: false,
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.5,
+                right: MediaQuery.of(context).size.width - 320,
+                child: Text(
+                  'Dictionary',
+                  style: AppThemeData().titleTheme.textTheme.titleLarge,
+                  overflow: TextOverflow.clip,
+                  maxLines: 1,
+                  softWrap: false,
+                ),
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.9,
+                right: MediaQuery.of(context).size.width * 0.3,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'By Thiago Nagaoka \n and \n Victor Iurkiewiecz',
+                      style: AppThemeData().titleTheme.textTheme.titleSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 150,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-            child: Container(
-              height: 1,
-              decoration: BoxDecoration(
-                color: AppColorTheme.titleColor,
-              ),
-            ),
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'By Thiago Nagaoka \n and \n Victor Iurkiewiecz',
-                style: AppThemeData().titleTheme.textTheme.titleSmall,
-                textAlign: TextAlign.center,
-              )
-            ],
-          )
-        ],
-      ),
-    );
+        ));
   }
 }
