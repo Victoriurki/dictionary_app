@@ -12,6 +12,7 @@ class AppColorTheme {
 class AppFontTheme {
   static final titleFont = GoogleFonts.robotoSerif().fontFamily;
   static final textFont = GoogleFonts.robotoSerif().fontFamily;
+  static final specialFont = GoogleFonts.inter();
 }
 
 class AppThemeData {
@@ -30,7 +31,7 @@ class AppThemeData {
       titleSmall: TextStyle(
         fontSize: 16,
         color: AppColorTheme.textColor,
-        fontFamily: AppFontTheme.textFont,
+        fontFamily: AppFontTheme.specialFont.fontFamily,
       ),
     ),
   );
