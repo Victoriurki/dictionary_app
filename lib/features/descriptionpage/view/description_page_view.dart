@@ -7,11 +7,11 @@ class DescriptionPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: const Center(
         child: Text('Teste - Description page'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.plus_one),
+        child: const Icon(Icons.plus_one),
         onPressed: () {
           Modular.to.navigate('/');
         },
