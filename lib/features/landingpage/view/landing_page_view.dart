@@ -7,6 +7,10 @@ class LandingPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 3), () {
+      Modular.to.navigate('/splashscreen/');
+    });
+
     return Scaffold(
       backgroundColor: AppColorTheme.landingPageBackgroundColor,
       body: Column(
@@ -69,11 +73,6 @@ class LandingPageView extends StatelessWidget {
             ],
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Modular.to.navigate('/splashscreen/');
-        },
       ),
     );
   }
