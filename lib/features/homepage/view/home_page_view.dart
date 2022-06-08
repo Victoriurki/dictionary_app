@@ -62,7 +62,7 @@ class _HomePageViewState extends State<HomePageView> {
                       Observer(builder: (_) {
                         return Text(
                           _controller.phonetic,
-                          style: AppThemeData().textTheme.textTheme.titleSmall,
+                          style: AppThemeData().specialFontThemeData.textTheme.titleSmall,
                         );
                       }),
                     ]),
@@ -72,7 +72,7 @@ class _HomePageViewState extends State<HomePageView> {
                   return InkWell(
                     onTap: () async {
                       await _controller.getWord();
-                      Modular.to.navigate('/description/');
+                      Modular.to.navigate('/description/', arguments: _controller.wordsFetched[0]);
                     },
                     child: Container(
                       margin: const EdgeInsets.only(bottom: 8.0),

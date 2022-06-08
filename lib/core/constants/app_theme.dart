@@ -16,6 +16,15 @@ class AppFontTheme {
 }
 
 class AppThemeData {
+ ThemeData specialFontThemeData = ThemeData(
+    textTheme: TextTheme(
+      titleSmall: TextStyle(
+        fontSize: 16,
+        color: AppColorTheme.textColor,
+        fontFamily: AppFontTheme.specialFont.fontFamily,
+      ),
+    ),
+  );
   ThemeData textTheme = ThemeData(
     textTheme: TextTheme(
       titleLarge: TextStyle(
@@ -31,7 +40,7 @@ class AppThemeData {
       titleSmall: TextStyle(
         fontSize: 16,
         color: AppColorTheme.textColor,
-        fontFamily: AppFontTheme.specialFont.fontFamily,
+        fontFamily: AppFontTheme.textFont,
       ),
     ),
   );
