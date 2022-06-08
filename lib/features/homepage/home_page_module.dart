@@ -1,6 +1,6 @@
 import 'package:dictionary_app/core/adapter/remote_client/remote_client.dart';
-import 'package:dictionary_app/features/homepage/controller/homepagecontroller.dart';
-import 'package:dictionary_app/features/homepage/view/homepageview.dart';
+import 'package:dictionary_app/features/homepage/controller/home_page_controller.dart';
+import 'package:dictionary_app/features/homepage/view/home_page_view.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePageModule extends Module {

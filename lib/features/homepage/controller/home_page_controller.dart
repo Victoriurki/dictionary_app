@@ -4,7 +4,7 @@ import 'package:dictionary_app/core/generics/api_model.dart';
 import 'package:dictionary_app/core/generics/resouce.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-part 'homepagecontroller.g.dart';
+part 'home_page_controller.g.dart';
 
 class HomePageController = _HomePageControllerBase with _$HomePageController;
 
@@ -55,7 +55,7 @@ abstract class _HomePageControllerBase with Store {
   @action
   Future<Resource<void, String>> getWord() async {
     final response =
-        await remoteClient.get('${ApiRoutes.baseUrl}/${wordSearch}');
+        await remoteClient.get('${ApiRoutes.baseUrl}/$wordSearch');
     if (response.statusCode == 200) {
       wordsFetched = (response.data as List)
           .map((e) => WordModel.fromJson(e))

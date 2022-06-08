@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashScreenView extends StatelessWidget {
@@ -9,7 +7,7 @@ class SplashScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: const Center(
         child: Text('Teste - Splash Screen'),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {

@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
-
 import '../../constants/api_response.dart';
 import 'remote_client_error.dart';
 
@@ -25,7 +22,7 @@ class DioRemoteClient implements RemoteClient {
       }
 
       return ApiResponse(statusCode: 200, data: response.data);
-    } on DioError catch (e) {
+    } on DioError catch (_) {
       return ApiResponse(statusCode: 500, error: RemoteClientError.badRequest);
     }
   }

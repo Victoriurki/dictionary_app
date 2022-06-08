@@ -9,7 +9,7 @@ class LandingPageModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: ((context, args) => LandingPageView()),
+          child: ((context, args) => const LandingPageView()),
         ),
       ];
 }
