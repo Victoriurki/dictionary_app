@@ -16,11 +16,6 @@ class DioRemoteClient implements RemoteClient {
     try {
       final response = await _dio.get(
         url,
-        options: Options(
-          headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-          },
-        ),
       );
 
       if (response.statusCode != 200) {
