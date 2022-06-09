@@ -16,6 +16,12 @@ mixin _$HomePageController on _HomePageControllerBase, Store {
       (_$wordTypeComputed ??= Computed<String>(() => super.wordType,
               name: '_HomePageControllerBase.wordType'))
           .value;
+  Computed<bool>? _$isValidComputed;
+
+  @override
+  bool get isValid => (_$isValidComputed ??= Computed<bool>(() => super.isValid,
+          name: '_HomePageControllerBase.isValid'))
+      .value;
   Computed<String>? _$phoneticComputed;
 
   @override
@@ -84,6 +90,7 @@ mixin _$HomePageController on _HomePageControllerBase, Store {
 wordSearch: ${wordSearch},
 wordsFetched: ${wordsFetched},
 wordType: ${wordType},
+isValid: ${isValid},
 phonetic: ${phonetic}
     ''';
   }

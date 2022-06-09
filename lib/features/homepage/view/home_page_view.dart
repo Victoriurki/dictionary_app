@@ -88,12 +88,14 @@ class _HomePageViewState extends State<HomePageView> {
             Observer(
               builder: (_) {
                 return InkWell(
-                  onTap: () async {
-                    await _controller.getWord();
-                    FocusScope.of(context).unfocus();
-                    Modular.to.pushNamed('/description/',
-                        arguments: _controller.wordsFetched[0]);
-                  },
+                  onTap: _controller.isValid
+                      ? () async {
+                          await _controller.getWord();
+                          FocusScope.of(context).unfocus();
+                          Modular.to.pushNamed('/description/',
+                              arguments: _controller.wordsFetched[0]);
+                        }
+                      : null,
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 26.0),
                     decoration: BoxDecoration(
