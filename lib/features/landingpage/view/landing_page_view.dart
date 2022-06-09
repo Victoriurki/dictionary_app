@@ -21,8 +21,8 @@ class LandingPageView extends StatelessWidget {
                 child: Text(
                   'Dictionary',
                   textScaleFactor: (MediaQuery.of(context).size.height /
-                          MediaQuery.of(context).size.width) *
-                      0.5,
+                          MediaQuery.of(context).size.width) *(MediaQuery.of(context).size.width *
+                      0.00124),
                   style: AppThemeData().titleTheme.textTheme.titleLarge,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
@@ -35,8 +35,8 @@ class LandingPageView extends StatelessWidget {
                 child: Text(
                   'Dictionary',
                   textScaleFactor: (MediaQuery.of(context).size.height /
-                          MediaQuery.of(context).size.width) *
-                      0.5,
+                          MediaQuery.of(context).size.width) *(MediaQuery.of(context).size.width*0.00126)
+                      ,
                   style: AppThemeData().titleTheme.textTheme.titleLarge,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
@@ -45,10 +45,10 @@ class LandingPageView extends StatelessWidget {
               ),
               Positioned(
                   top: MediaQuery.of(context).size.height * 0.88,
-                  right: MediaQuery.of(context).size.width * 0.15,
+                  right: MediaQuery.of(context).size.width * 0.06,
                   child: Container(
                     height: 1,
-                    width: MediaQuery.of(context).size.width * 0.7,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     color: AppColorTheme.titleColor,
                   )),
               Positioned(
