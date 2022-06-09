@@ -18,6 +18,9 @@ abstract class _HomePageControllerBase with Store {
   ObservableList wordsFetched = [].asObservable();
 
   @computed
+  bool get isValid => wordSearch.isNotEmpty && wordsFetched.isNotEmpty;
+
+  @computed
   String get wordType {
     return wordSearch.isNotEmpty
         ? wordsFetched.isNotEmpty
@@ -54,8 +57,7 @@ abstract class _HomePageControllerBase with Store {
 
   @action
   Future<Resource<void, String>> getWord() async {
-    final response =
-        await remoteClient.get('${ApiRoutes.baseUrl}/$wordSearch');
+    final response = await remoteClient.get('${ApiRoutes.baseUrl}/$wordSearch');
     if (response.statusCode == 200) {
       wordsFetched = (response.data as List)
           .map((e) => WordModel.fromJson(e))
@@ -63,6 +65,7 @@ abstract class _HomePageControllerBase with Store {
           .asObservable();
       return Resource.success();
     }
+    wordsFetched = [].asObservable();
     return Resource.failed();
   }
 }
