@@ -48,7 +48,7 @@ class _HomePageViewState extends State<HomePageView> {
                         builder: (_) {
                           return TextField(
                             cursorColor: AppColorTheme.textColor,
-                            autofocus: true,                            
+                            autofocus: true,
                             keyboardType: TextInputType.name,
                             decoration: InputDecoration(
                               hintText: '',
@@ -82,47 +82,44 @@ class _HomePageViewState extends State<HomePageView> {
                       ),
                     ],
                   ),
-                ),                
+                ),
               ],
             ),
             Observer(
-                  builder: (_) {
-                    return InkWell(
-                      onTap: () async {
-                        await _controller.getWord();
-                        FocusScope.of(context).unfocus();
-                        Modular.to.navigate('/description/',
-                            arguments: _controller.wordsFetched[0]);
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.only(bottom: 26.0),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppColorTheme.textColor),
-                          borderRadius: BorderRadius.circular(32.0),
-                        ),
-                        padding: const EdgeInsets.all(8.0),
-                        width: MediaQuery.of(context).size.width * 0.844,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'OK',
-                              style: AppThemeData()
-                                  .textTheme
-                                  .textTheme
-                                  .titleMedium,
-                            ),
-                            const Icon(
-                              Icons.arrow_forward,
-                              color: Colors.black,
-                              size: 45,
-                            )
-                          ],
-                        ),
-                      ),
-                    );
+              builder: (_) {
+                return InkWell(
+                  onTap: () async {
+                    await _controller.getWord();
+                    FocusScope.of(context).unfocus();
+                    Modular.to.pushNamed('/description/',
+                        arguments: _controller.wordsFetched[0]);
                   },
-                ),
+                  child: Container(
+                    margin: const EdgeInsets.only(bottom: 26.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColorTheme.textColor),
+                      borderRadius: BorderRadius.circular(32.0),
+                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    width: MediaQuery.of(context).size.width * 0.844,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'OK',
+                          style: AppThemeData().textTheme.textTheme.titleMedium,
+                        ),
+                        const Icon(
+                          Icons.arrow_forward,
+                          color: Colors.black,
+                          size: 45,
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
