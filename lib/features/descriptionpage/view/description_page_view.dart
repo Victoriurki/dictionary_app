@@ -1,7 +1,6 @@
 import 'package:dictionary_app/core/constants/app_theme.dart';
 import 'package:dictionary_app/core/generics/api_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 class DescriptionPageView extends StatelessWidget {
   const DescriptionPageView({Key? key, required this.word}) : super(key: key);
