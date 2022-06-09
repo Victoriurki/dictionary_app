@@ -85,12 +85,6 @@ class DescriptionPageView extends StatelessWidget {
                 : Container(),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.plus_one),
-          onPressed: () {
-            Modular.to.navigate('/');
-          },
-        ),
       ),
     );
   }
