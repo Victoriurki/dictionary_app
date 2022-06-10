@@ -111,9 +111,9 @@ class _HomePageViewState extends State<HomePageView> {
                           'OK',
                           style: AppThemeData().textTheme.textTheme.titleMedium,
                         ),
-                        const Icon(
+                        Icon(
                           Icons.arrow_forward,
-                          color: Colors.black,
+                          color: AppColorTheme.textColor,
                           size: 45,
                         )
                       ],
