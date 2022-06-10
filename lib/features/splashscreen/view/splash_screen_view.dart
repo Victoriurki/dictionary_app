@@ -25,9 +25,6 @@ class _SplashScreenViewState extends State<SplashScreenView> {
     Future.delayed(const Duration(milliseconds: 100), () {
       _controller.setIsInitialValue(false);
     });
-    Future.delayed(const Duration(seconds: 5), () {
-      Modular.to.pushNamed('/homepage/');
-    });
     return Scaffold(
       backgroundColor: AppColorTheme.landingPageBackgroundColor,
       body: Stack(
@@ -61,6 +58,9 @@ class _SplashScreenViewState extends State<SplashScreenView> {
             child: Observer(builder: (_) {
               return AnimatedContainer(
                 duration: const Duration(seconds: 5),
+                onEnd: () {
+                  Modular.to.pushNamed('/homepage/');
+                },
                 transform: _controller.isInitialValue
                     ? Matrix4.translationValues(
                         MediaQuery.of(context).size.height, 0, 0)

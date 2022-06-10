@@ -11,7 +11,7 @@ class LandingPageView extends StatelessWidget {
         backgroundColor: AppColorTheme.landingPageBackgroundColor,
         body: InkWell(
           onTap: () {
-            Modular.to.navigate('/splashscreen/');
+            Modular.to.pushNamed('/splashscreen/');
           },
           child: Stack(
             children: <Widget>[
@@ -20,8 +20,8 @@ class LandingPageView extends StatelessWidget {
                 right: MediaQuery.of(context).size.height * -0.4,
                 child: Text(
                   'Dictionary',
-                  textScaleFactor: (MediaQuery.of(context).size.height*
-                      0.00124),
+                  textScaleFactor:
+                      (MediaQuery.of(context).size.height * 0.00124),
                   style: AppThemeData().titleTheme.textTheme.titleLarge,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
@@ -33,8 +33,8 @@ class LandingPageView extends StatelessWidget {
                 right: MediaQuery.of(context).size.height * 0.09,
                 child: Text(
                   'Dictionary',
-                  textScaleFactor: (MediaQuery.of(context).size.height*0.00126)
-                      ,
+                  textScaleFactor:
+                      (MediaQuery.of(context).size.height * 0.00126),
                   style: AppThemeData().titleTheme.textTheme.titleLarge,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
