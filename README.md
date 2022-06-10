@@ -16,17 +16,6 @@ When you tap on the "OK" button, you will be redirected to our description page,
 
 <img src="screenshot/screenshot3.png" width="200" height="400">
 
-If you select the last option, you will see user's information. this is illustrated in the first image bellow. If you click 'CHANGE PASSWORD', you can change your password. It is shown in the second image bellow.
-
-<div style="display: flex;">
-<img src="screenshots/screen_5.png" width="200" height="400">&nbsp;&nbsp;
-<img src="screenshots/screen_6.png" width="200" height="400">
-</div>
-
-If you click 'See scores', you can see your scoreboard. It is illustrated in the image below.
-
-<img src="screenshots/screen_7.png" width="200" height="400">
-
 ## Getting Started
 
 If you would like to collaborate or just run this app on your computer, remember that you need to have this items on your Desktop:
