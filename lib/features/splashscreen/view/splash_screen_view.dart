@@ -39,7 +39,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
                     ? Matrix4.translationValues(
                         MediaQuery.of(context).size.height * -1, 0, 0)
                     : Matrix4.translationValues(
-                        MediaQuery.of(context).size.height * 0.00126, 0, 0),
+                        MediaQuery.of(context).size.height * 0.00125, 0, 0),
                 child: Text(
                   'Dictionary',
                   textScaleFactor:
@@ -65,11 +65,11 @@ class _SplashScreenViewState extends State<SplashScreenView> {
                     ? Matrix4.translationValues(
                         MediaQuery.of(context).size.height, 0, 0)
                     : Matrix4.translationValues(
-                        MediaQuery.of(context).size.height * 0.00126, 0, 0),
+                        MediaQuery.of(context).size.height * -0.01, 0, 0),
                 child: Text(
                   'Dictionary',
                   textScaleFactor:
-                      (MediaQuery.of(context).size.height * 0.00124),
+                      (MediaQuery.of(context).size.height * 0.00126),
                   style: AppThemeData().titleTheme.textTheme.titleLarge,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
