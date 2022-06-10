@@ -8,7 +8,7 @@ When you open our app, you will see our landing page. It is illustrated in the i
 
 <img src="screenshot/screenshot1.png" width="200" height="400">
 
-If you tap on the screen, you will be redirected to our homepage, it is where you type a word that you would like search. It is shown in the image bellow.
+If you tap on the screen, you will be redirected to our homepage, it is where you type the word that you would like search. It is shown in the image bellow.
 
 <img src="screenshot/screenshot2.png" width="200" height="400">
 
@@ -18,7 +18,7 @@ When you tap on the "OK" button, you will be redirected to our description page,
 
 ## Getting Started
 
-If you would like to collaborate or just run this app on your computer, remember that you need to have this items on your Desktop:
+If you would like to collaborate or just run this app on your computer, remember that you must have this items on your Desktop:
 
 - Dart
 - Flutter
@@ -26,7 +26,7 @@ If you would like to collaborate or just run this app on your computer, remember
 - Android Studio
 - XCode (MacOS)
 
-Also, you need to have this flutter public packages:
+Also, you must have this flutter public packages:
 
 - Flutter Mobx
 - Mobx Codegen
@@ -37,7 +37,7 @@ Also, you need to have this flutter public packages:
 - Google Fonts
 - Build Runner
 
-And then you need to run the following command in your terminal:
+Then you have to run the following command in your terminal:
 
 ```
 git clone https://github.com/Victoriurki/dictionary_app.git
