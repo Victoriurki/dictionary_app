@@ -27,81 +27,86 @@ class _SplashScreenViewState extends State<SplashScreenView> {
     });
     return Scaffold(
       backgroundColor: AppColorTheme.landingPageBackgroundColor,
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.3,
-            right: MediaQuery.of(context).size.height * -0.4,
-            child: Observer(builder: (_) {
-              return AnimatedContainer(
-                duration: const Duration(seconds: 5),
-                transform: _controller.isInitialValue
-                    ? Matrix4.translationValues(
-                        MediaQuery.of(context).size.height * -1, 0, 0)
-                    : Matrix4.translationValues(
-                        MediaQuery.of(context).size.height * 0.00125, 0, 0),
-                child: Text(
-                  'Dictionary',
-                  textScaleFactor:
-                      (MediaQuery.of(context).size.height * 0.00124),
-                  style: AppThemeData().titleTheme.textTheme.titleLarge,
-                  overflow: TextOverflow.clip,
-                  maxLines: 1,
-                  softWrap: false,
-                ),
-              );
-            }),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.5,
-            right: MediaQuery.of(context).size.height * 0.09,
-            child: Observer(builder: (_) {
-              return AnimatedContainer(
-                duration: const Duration(seconds: 5),
-                onEnd: () {
-                  Modular.to.pushNamed('/homepage/');
-                },
-                transform: _controller.isInitialValue
-                    ? Matrix4.translationValues(
-                        MediaQuery.of(context).size.height, 0, 0)
-                    : Matrix4.translationValues(
-                        MediaQuery.of(context).size.height * -0.01, 0, 0),
-                child: Text(
-                  'Dictionary',
-                  textScaleFactor:
-                      (MediaQuery.of(context).size.height * 0.00126),
-                  style: AppThemeData().titleTheme.textTheme.titleLarge,
-                  overflow: TextOverflow.clip,
-                  maxLines: 1,
-                  softWrap: false,
-                ),
-              );
-            }),
-          ),
-          Positioned(
-              top: MediaQuery.of(context).size.height * 0.88,
-              right: MediaQuery.of(context).size.width * 0.06,
-              child: Container(
-                height: 1,
-                width: MediaQuery.of(context).size.width * 0.9,
-                color: AppColorTheme.titleColor,
-              )),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.9,
-            right: MediaQuery.of(context).size.width * 0.3,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'By Thiago Nagaoka \n and \n Victor Iurkiewiecz',
-                  style: AppThemeData().titleTheme.textTheme.titleSmall,
-                  textAlign: TextAlign.center,
-                ),
-              ],
+      body: InkWell(
+        onTap: () async {
+          await Modular.to.pushNamed('/homepage/');
+        },
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.3,
+              right: MediaQuery.of(context).size.height * -0.4,
+              child: Observer(builder: (_) {
+                return AnimatedContainer(
+                  duration: const Duration(seconds: 5),
+                  transform: _controller.isInitialValue
+                      ? Matrix4.translationValues(
+                          MediaQuery.of(context).size.height * -1, 0, 0)
+                      : Matrix4.translationValues(
+                          MediaQuery.of(context).size.height * 0.00125, 0, 0),
+                  child: Text(
+                    'Dictionary',
+                    textScaleFactor:
+                        (MediaQuery.of(context).size.height * 0.00124),
+                    style: AppThemeData().titleTheme.textTheme.titleLarge,
+                    overflow: TextOverflow.clip,
+                    maxLines: 1,
+                    softWrap: false,
+                  ),
+                );
+              }),
             ),
-          ),
-        ],
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.5,
+              right: MediaQuery.of(context).size.height * 0.09,
+              child: Observer(builder: (_) {
+                return AnimatedContainer(
+                  duration: const Duration(seconds: 5),
+                  onEnd: () {
+                    Modular.to.pushNamed('/homepage/');
+                  },
+                  transform: _controller.isInitialValue
+                      ? Matrix4.translationValues(
+                          MediaQuery.of(context).size.height, 0, 0)
+                      : Matrix4.translationValues(
+                          MediaQuery.of(context).size.height * -0.01, 0, 0),
+                  child: Text(
+                    'Dictionary',
+                    textScaleFactor:
+                        (MediaQuery.of(context).size.height * 0.00126),
+                    style: AppThemeData().titleTheme.textTheme.titleLarge,
+                    overflow: TextOverflow.clip,
+                    maxLines: 1,
+                    softWrap: false,
+                  ),
+                );
+              }),
+            ),
+            Positioned(
+                top: MediaQuery.of(context).size.height * 0.88,
+                right: MediaQuery.of(context).size.width * 0.06,
+                child: Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  color: AppColorTheme.titleColor,
+                )),
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.9,
+              right: MediaQuery.of(context).size.width * 0.3,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'By Thiago Nagaoka \n and \n Victor Iurkiewiecz',
+                    style: AppThemeData().titleTheme.textTheme.titleSmall,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
