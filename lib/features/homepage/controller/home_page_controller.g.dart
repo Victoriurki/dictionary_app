@@ -62,6 +62,22 @@ mixin _$HomePageController on _HomePageControllerBase, Store {
     });
   }
 
+  late final _$isFetchingWordAtom =
+      Atom(name: '_HomePageControllerBase.isFetchingWord', context: context);
+
+  @override
+  bool get isFetchingWord {
+    _$isFetchingWordAtom.reportRead();
+    return super.isFetchingWord;
+  }
+
+  @override
+  set isFetchingWord(bool value) {
+    _$isFetchingWordAtom.reportWrite(value, super.isFetchingWord, () {
+      super.isFetchingWord = value;
+    });
+  }
+
   late final _$getWordAsyncAction =
       AsyncAction('_HomePageControllerBase.getWord', context: context);
 
@@ -89,6 +105,7 @@ mixin _$HomePageController on _HomePageControllerBase, Store {
     return '''
 wordSearch: ${wordSearch},
 wordsFetched: ${wordsFetched},
+isFetchingWord: ${isFetchingWord},
 isValid: ${isValid},
 wordType: ${wordType},
 phonetic: ${phonetic}

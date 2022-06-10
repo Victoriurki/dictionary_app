@@ -92,7 +92,7 @@ class _HomePageViewState extends State<HomePageView> {
                       ? () async {
                           await _controller.getWord();
                           FocusScope.of(context).unfocus();
-                          Modular.to.pushNamed('/description/',
+                          await Modular.to.pushNamed('/description/',
                               arguments: _controller.wordsFetched[0]);
                         }
                       : null,
